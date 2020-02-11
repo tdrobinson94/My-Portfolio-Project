@@ -11,6 +11,7 @@ const   gulp = require('gulp'),
         notify = require('gulp-notify'),
         chalk = require('chalk'),
         babel = require('babelify'),
+        surge = require('gulp-surge'),
         { series, parallel } = require('gulp')
 
 
@@ -70,10 +71,19 @@ function watch() {
 
 }
 
+
+function deploy() {
+  return surge({
+    project: './app',
+    domain: 'tdr-portfolio.surge.sh'
+  })
+}
+
 //Declaring the tasks
 exports.css = css;
 exports.scss = scss;
 exports.watch = watch;
 exports.browserified = browserified;
+exports.deploy = deploy;
 
 exports.build = series(scss, parallel(browserified, watch));
