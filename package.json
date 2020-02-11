@@ -1,0 +1,24 @@
+{
+  "name": "portfolio-project",
+  "version": "1.0.0",
+  "description": "This is my portfolio project.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tdrobinson94/My-Portfolio-Project.git"
+  },
+  "author": "Terry Robinson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tdrobinson94/My-Portfolio-Project/issues"
+  },
+  "homepage": "https://github.com/tdrobinson94/My-Portfolio-Project#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglifycss": "^1.1.0"
+  }
+}
