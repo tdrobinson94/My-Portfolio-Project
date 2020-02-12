@@ -17,3 +17,25 @@ html {
     height: 100%;
     color: #fff;
 }
+
+
+.header {
+  display: flex;
+  .logo {
+    font-size: 35px;
+    width: 40%;
+    text-align: center;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+  }
+
+  li {
+    
+  }
+}
