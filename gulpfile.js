@@ -12,7 +12,8 @@ const   gulp = require('gulp'),
         chalk = require('chalk'),
         babel = require('babelify'),
         surge = require('gulp-surge'),
-        { series, parallel } = require('gulp')
+        { series, parallel } = require('gulp'),
+        livereload = require('gulp-livereload');
 
 
 function handleError(err) {
@@ -66,8 +67,8 @@ function watch() {
   });
   gulp.watch('./src/sass/*.scss', scss);
   gulp.watch('./app/css/*.css', css);
-  gulp.watch('./app/*.html').on('change', browserSync.reload);
-  gulp.watch('./src/js/*.js').on('change', browserSync.reload);
+  gulp.watch('./src/js/*.js', browserified);
+  gulp.watch('./app/**/**').on('change', browserSync.reload);
 
 }
 
@@ -86,4 +87,6 @@ exports.watch = watch;
 exports.browserified = browserified;
 exports.deploy = deploy;
 
-exports.build = series(scss, parallel(browserified, watch));
+exports.build = series(scss, browserified, watch);
+
+// exports.build = series(scss, parallel(css, series(browserified, watch)));
